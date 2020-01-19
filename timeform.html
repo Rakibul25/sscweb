@@ -1,0 +1,92 @@
+<html>
+<head>
+  <link rel="stylesheet" href="timeformcss.css" type="text/css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+  
+  var script_url = "https://script.google.com/macros/s/AKfycbwq19L4EfVJCrtVkeT8xrWDv2RKuyXVP6RmwHS-TAywC7Rc6PgQ/exec";
+  
+  // All functions here
+  function insert_value() {
+    
+	$("#re").css("visibility","hidden");
+	 document.getElementById("loader").style.visibility = "visible";
+
+
+   var name=	$("#name").val();
+	var phone= $("#phone").val();
+	
+	
+    var url = script_url+"?callback=ctrlq&name="+name+"&phone="+phone+"&action=insert";
+
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
+
+  }
+  
+  </script>
+
+  
+</head>
+<body>
+
+<div id="loader">
+
+  <h1 class = "h1">Booth Timing 201</h1> 
+  
+  <form >
+    <input type = "text" placeholder="Name"  id="name">
+    <input type = "text" placeholder="Phone" name ="phone" id="phone">
+
+  <select id="saturday" name="cars">
+    <option value="fiat" selected>Saturday</option>
+    <option value="10.00-11.40">10.00-11.40</option>
+    <option value="11.40-01.30">11.40-01.30</option>
+    <option value="01.30-03.00">01.30-03.00</option>
+    <option value="03.00-04.00">03.00-04.00</option>
+    <option value="Busy">Busy</option>
+  </select>
+  <br><br>
+  <select id="sunday" name="cars">
+    <option value="fiat" selected>Sunday</option>
+    <option value="10.00-11.40">10.00-11.40</option>
+    <option value="11.40-01.30">11.40-01.30</option>
+    <option value="01.30-03.00">01.30-03.00</option>
+    <option value="03.00-04.00">03.00-04.00</option>
+    <option value="Busy">Busy</option>
+  </select>
+  <br><br>
+  <select id="tuesday" name="cars">
+    <option value="fiat" selected>Tuesday</option>
+    <option value="10.00-11.40">10.00-11.40</option>
+    <option value="11.40-01.30">11.40-01.30</option>
+    <option value="01.30-03.00">01.30-03.00</option>
+    <option value="03.00-04.00">03.00-04.00</option>
+    <option value="Busy">Busy</option>
+  </select>
+  <br><br>
+  <select id="wednesday" name="cars">
+    <option value="fiat" selected>Wednesday</option>
+    <option value="10.00-11.40">10.00-11.40</option>
+    <option value="11.40-01.30">11.40-01.30</option>
+    <option value="01.30-03.00">01.30-03.00</option>
+    <option value="03.00-04.00">03.00-04.00</option>
+    <option value="Busy">Busy</option>
+  </select>
+  <br><br>
+  <input type = "submit"  id = "b1" onClick="insert_value()" value = "Submit"></input>
+  
+  </form>
+
+</div>
+<div align="center">
+  <p>Copyright © Rakibul Islam || All rights reserved.</p>
+  </div>
+</body>
+
+<html>
